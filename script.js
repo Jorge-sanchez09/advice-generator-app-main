@@ -9,7 +9,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function request(){
         const url = "https://api.adviceslip.com/advice";
-        const response = await fetch(url);
+        const response = await fetch(url, { 
+            method: 'GET', 
+            mode: 'cors', 
+            cache: 'no-cache' 
+        });
         const data = await response.json();
     
         return data;
